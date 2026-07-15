@@ -216,44 +216,46 @@ section{padding:88px 0;}
   </div>
 </header>
 
-<!-- ============ ヒーロー（写真中心） ============ -->
-<div class="hero" id="top">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <p class="hero-eyebrow">MISAWA HIROAKI</p>
-      <h1 class="hero-title">次世代に<span class="accent">誇れる</span><br>日本へ。</h1>
-      <p class="hero-lead">まだ終わっていない、日本。希望と再生のために。</p>
-      <p class="hero-text">
-        国民民主党 東京都第28区（練馬区東部）総支部長。  
-        金融の最前線で世界と向き合った経験を、日本の自立と再生のために。
-      </p>
 
-      <div class="hero-tags">
-        <span>東京28区・練馬</span>
-        <span>国家の自立</span>
-        <span>資本主権</span>
-        <span>手取りを増やす</span>
-      </div>
+<!-- ============ 全画面ヒーロー（Minimal Mistakes対応） ============ -->
+<section class="full-hero">
+  <img src="assets/images/misawa-photo.jpg" alt="みさわ宏明" class="full-hero-img">
 
-      <div class="hero-btns">
-        <a href="/policy/" class="btn btn-primary">政策を見る</a>
-        <a href="/support/" class="btn btn-gold">みさわを応援する</a>
-      </div>
+  <div class="full-hero-text">
+    <p class="hero-eyebrow">MISAWA HIROAKI</p>
 
-      <div class="hero-sns">
-        <a href="#" aria-label="X（旧Twitter）">X</a>
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Instagram">Ig</a>
-        <a href="#" aria-label="YouTube">▶</a>
-        <a href="#" aria-label="LINE">L</a>
-      </div>
+    <h1 class="hero-title">
+      次世代に<span class="accent">誇れる</span><br>日本へ。
+    </h1>
+
+    <p class="hero-lead">まだ終わっていない、日本。希望と再生のために。</p>
+
+    <p class="hero-desc">
+      国民民主党 東京都第28区（練馬区東部）総支部長。<br>
+      金融の最前線で世界と向き合った経験を、日本の自立と再生のために。
+    </p>
+
+    <div class="hero-tags">
+      <span>東京28区・練馬</span>
+      <span>国家の自立</span>
+      <span>資本主権</span>
+      <span>手取りを増やす</span>
     </div>
 
-    <div class="hero-photo-wrap">
-      <img src="assets/images/misawa-photo.jpg" alt="みさわ宏明">
+    <div class="hero-btns">
+      <a href="/policy/" class="btn btn-primary">政策を見る</a>
+      <a href="/support/" class="btn btn-gold">みさわを応援する</a>
+    </div>
+
+    <div class="hero-sns">
+      <a href="#" aria-label="X（旧Twitter）">X</a>
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="Instagram">Ig</a>
+      <a href="#" aria-label="YouTube">▶</a>
+      <a href="#" aria-label="LINE">L</a>
     </div>
   </div>
-</div>
+</section>
 
 <style>
 :root{
@@ -263,50 +265,50 @@ section{padding:88px 0;}
   --line:#d9d9d9;
 }
 
-/* ===== Hero (写真ヒーロー版) ===== */
-.hero{
+/* ===== 全画面ヒーロー ===== */
+.full-hero{
   position:relative;
-  min-height:92vh;
-  display:flex;
-  align-items:stretch;
-  background:var(--navy);
-  overflow:hidden;
-  padding-top:68px;
-}
-
-.hero-inner{
-  position:relative;
-  max-width:1280px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
   width:100%;
-}
-
-.hero-copy{
-  z-index:2;
+  height:100vh; /* ← 画面いっぱい */
+  overflow:hidden;
   display:flex;
-  flex-direction:column;
+  align-items:center;
   justify-content:center;
-  padding:64px 48px;
-  color:var(--white);
+  background:var(--navy);
 }
 
+.full-hero-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover; /* ← 玉木代表のように大きく */
+  object-position:center top;
+  z-index:1;
+  filter:brightness(0.75); /* ← 写真を暗くして文字を読みやすく */
+}
+
+.full-hero-text{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:var(--white);
+  padding:20px;
+}
+
+/* ===== テキスト ===== */
 .hero-eyebrow{
-  font-size:13px;
-  font-weight:700;
+  font-size:14px;
   letter-spacing:.3em;
   color:var(--gold);
-  margin-bottom:18px;
+  margin-bottom:12px;
 }
 
 .hero-title{
+  font-size:clamp(32px,5vw,52px);
   font-weight:800;
-  font-size:clamp(30px,4vw,46px);
-  letter-spacing:.08em;
-  color:var(--white);
-  line-height:1.55;
-  margin-bottom:22px;
+  line-height:1.4;
+  margin-bottom:16px;
 }
 
 .hero-title .accent{
@@ -314,23 +316,24 @@ section{padding:88px 0;}
 }
 
 .hero-lead{
-  font-size:17px;
+  font-size:18px;
   font-weight:600;
-  color:var(--white);
-  margin-bottom:14px;
+  margin-bottom:12px;
 }
 
-.hero-text{
-  font-size:14px;
-  color:#C9D4E4;
-  margin-bottom:26px;
-  max-width:440px;
+.hero-desc{
+  font-size:15px;
+  max-width:600px;
+  margin:0 auto 24px auto;
+  opacity:0.9;
 }
 
+/* ===== タグ ===== */
 .hero-tags{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
+  justify-content:center;
   margin-bottom:28px;
 }
 
@@ -344,20 +347,19 @@ section{padding:88px 0;}
   border-radius:99px;
 }
 
+/* ===== ボタン ===== */
 .hero-btns{
   display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
   margin-bottom:28px;
 }
 
 .btn{
-  display:inline-block;
+  padding:12px 28px;
   font-weight:700;
-  font-size:14px;
-  padding:13px 28px;
-  border-radius:3px;
-  transition:transform .15s,filter .2s;
+  border-radius:4px;
+  transition:0.2s;
 }
 
 .btn-primary{
@@ -370,9 +372,15 @@ section{padding:88px 0;}
   color:var(--navy);
 }
 
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+/* ===== SNS ===== */
 .hero-sns{
   display:flex;
   gap:12px;
+  justify-content:center;
 }
 
 .hero-sns a{
@@ -388,27 +396,8 @@ section{padding:88px 0;}
   font-size:12px;
   font-weight:700;
 }
-
-.hero-photo-wrap{
-  position:relative;
-  overflow:hidden;
-}
-
-.hero-photo-wrap img{
-  width:100%;
-  height:auto; /* ← Minimal Mistakes対応 */
-  object-fit:cover;
-  object-position:top center;
-}
-
-.hero-photo-wrap::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,var(--navy) 0%,rgba(11,42,85,.55) 16%,rgba(11,42,85,0) 42%);
-  z-index:1;
-}
 </style>
+
 
 
 <!-- ============ 理念・メッセージ ============ -->
