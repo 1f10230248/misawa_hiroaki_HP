@@ -1,11 +1,510 @@
----
-layout: home
-author_profile: true
-title: みさわ宏明
----
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>みさわ宏明 公式サイト｜次世代に誇れる日本へ。</title>
+<meta name="description" content="国民民主党 東京28区（練馬区東部）支部長 みさわ宏明の公式サイト。次世代に誇れる日本へ。国家の自立と暮らしの再生のために活動しています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2A55;
+  --navy-deep:#071C3B;
+  --blue:#1656A8;
+  --gold:#E5B838;
+  --gold-soft:#F6E7BC;
+  --paper:#F7F8FA;
+  --white:#FFFFFF;
+  --ink:#1A2333;
+  --gray:#5C6675;
+  --line:#DDE3EA;
+  --serif:'Shippori Mincho','Hiragino Mincho ProN','Yu Mincho',serif;
+  --sans:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+.container{max-width:1080px;margin:0 auto;padding:0 24px;}
 
-<section>
-  <img src="assets/images/main.jpg" alt="候補者写真" style="width:100%; border-radius:8px;">
-  <h1>未来をつくる、あなたとともに。</h1>
-  <p>地域の声を政治に届けます。</p>
+/* ===== Header ===== */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+.brand{display:flex;align-items:baseline;gap:12px;}
+.brand-name{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.08em;color:var(--navy);}
+.brand-party{font-size:11px;font-weight:700;color:var(--white);background:var(--navy);padding:3px 10px;border-radius:2px;letter-spacing:.1em;}
+.nav{display:flex;gap:28px;align-items:center;}
+.nav a{font-size:14px;font-weight:500;letter-spacing:.06em;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;}
+.nav a:hover{color:var(--blue);border-color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy) !important;font-weight:700;padding:9px 20px !important;border-radius:3px;border:none !important;transition:filter .2s;}
+.nav-cta:hover{filter:brightness(1.05);}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;transition:.3s;}
+
+/* ===== Hero ===== */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;background:linear-gradient(160deg,#F7F8FA 0%,#EDF1F7 55%,#E3EAF4 100%);overflow:hidden;padding-top:68px;}
+.hero::before{content:"";position:absolute;right:-10%;top:-20%;width:60%;height:140%;background:radial-gradient(closest-side,rgba(22,86,168,.10),transparent 70%);}
+.hero::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:6px;background:linear-gradient(90deg,var(--navy) 0%,var(--navy) 60%,var(--gold) 60%,var(--gold) 100%);}
+.hero-inner{position:relative;max-width:1080px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:auto 1fr auto;gap:48px;align-items:center;width:100%;}
+.hero-copy-v{writing-mode:vertical-rl;font-family:var(--serif);font-weight:800;font-size:clamp(40px,5.5vw,64px);letter-spacing:.22em;color:var(--navy);line-height:1.5;height:min(60vh,520px);}
+.hero-copy-v .accent{color:var(--gold);text-shadow:0 1px 0 rgba(11,42,85,.15);}
+.hero-body{max-width:420px;}
+.hero-lead{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);letter-spacing:.06em;margin-bottom:16px;}
+.hero-text{font-size:14.5px;color:var(--gray);margin-bottom:28px;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+.hero-tags span{font-size:12px;font-weight:700;color:var(--navy);background:var(--white);border:1px solid var(--line);padding:5px 12px;border-radius:99px;letter-spacing:.05em;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-block;font-weight:700;font-size:14px;letter-spacing:.08em;padding:13px 28px;border-radius:3px;transition:transform .15s,filter .2s;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--navy);color:var(--white);}
+.btn-primary:hover{filter:brightness(1.15);}
+.btn-gold{background:var(--gold);color:var(--navy);}
+.btn-gold:hover{filter:brightness(1.05);}
+.btn-ghost{border:1.5px solid var(--navy);color:var(--navy);}
+/* 写真プレースホルダー：ここを本人写真 <img> に差し替えてください */
+.hero-photo{width:min(34vw,360px);aspect-ratio:3/4;background:linear-gradient(180deg,#C9D4E4,#9FB2CC);border-radius:4px;position:relative;box-shadow:0 24px 48px rgba(11,42,85,.18);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
+.hero-photo::before{content:"本人写真\A（差し替え）";white-space:pre;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:rgba(255,255,255,.85);font-size:13px;letter-spacing:.2em;font-weight:700;}
+.hero-photo-name{position:relative;background:rgba(11,42,85,.85);color:var(--white);width:100%;text-align:center;padding:10px 0;font-family:var(--serif);font-size:15px;letter-spacing:.3em;font-weight:700;}
+
+/* ===== Section base ===== */
+section{padding:88px 0;}
+.sec-label{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.sec-label::before{content:"";width:36px;height:3px;background:var(--gold);}
+.sec-label span{font-size:12px;font-weight:700;letter-spacing:.28em;color:var(--blue);}
+.sec-title{font-family:var(--serif);font-size:clamp(26px,3.4vw,34px);font-weight:800;color:var(--navy);letter-spacing:.08em;margin-bottom:36px;}
+
+/* ===== Message ===== */
+.message{background:var(--white);}
+.message-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;}
+.message-quote{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);font-weight:700;color:var(--navy);letter-spacing:.06em;line-height:2.1;border-left:4px solid var(--gold);padding-left:24px;margin-bottom:28px;}
+.message p{color:var(--ink);font-size:15px;margin-bottom:18px;}
+.message-sign{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--navy);letter-spacing:.15em;text-align:right;margin-top:8px;}
+.message-sign small{display:block;font-size:11px;color:var(--gray);letter-spacing:.1em;font-weight:500;}
+/* メッセージ写真プレースホルダー */
+.message-photo{aspect-ratio:4/3;background:linear-gradient(180deg,#DCE4EF,#B9C7DC);border-radius:4px;display:flex;align-items:center;justify-content:center;color:rgba(11,42,85,.4);font-size:13px;letter-spacing:.2em;font-weight:700;}
+
+/* ===== Profile ===== */
+.profile{background:var(--paper);}
+.profile-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;}
+.profile-card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:32px;}
+.profile-card h3{font-family:var(--serif);font-size:22px;color:var(--navy);letter-spacing:.12em;margin-bottom:4px;}
+.profile-card .kana{font-size:12px;color:var(--gray);letter-spacing:.3em;margin-bottom:20px;}
+.profile-card dl{font-size:14px;}
+.profile-card dt{font-weight:700;color:var(--blue);font-size:12px;letter-spacing:.15em;margin-top:14px;}
+.profile-card dd{color:var(--ink);}
+.timeline{position:relative;padding-left:28px;}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line);}
+.timeline li{position:relative;padding-bottom:26px;}
+.timeline li::before{content:"";position:absolute;left:-26px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--white);border:3px solid var(--blue);}
+.timeline li:last-child::before{border-color:var(--gold);background:var(--gold);}
+.timeline .t-era{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.15em;}
+.timeline .t-title{font-weight:700;font-size:16px;color:var(--navy);margin:2px 0 4px;}
+.timeline p{font-size:14px;color:var(--gray);}
+
+/* ===== Policy ===== */
+.policy{background:var(--navy);color:var(--white);position:relative;overflow:hidden;}
+.policy::before{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border:1px solid rgba(229,184,56,.25);border-radius:50%;}
+.policy::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border:1px solid rgba(229,184,56,.35);border-radius:50%;}
+.policy .sec-label span{color:var(--gold);}
+.policy .sec-title{color:var(--white);}
+.policy-intro{max-width:720px;font-size:15px;color:#C9D4E4;margin-bottom:48px;}
+.policy-block{margin-bottom:56px;position:relative;z-index:1;}
+.policy-block-title{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:8px;}
+.policy-block-sub{font-size:13.5px;color:#AEBDD3;margin-bottom:24px;}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.pillar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:20px 20px 18px;transition:background .2s,border-color .2s;}
+.pillar:hover{background:rgba(229,184,56,.1);border-color:rgba(229,184,56,.5);}
+.pillar h4{font-family:var(--serif);font-size:17px;color:var(--white);letter-spacing:.08em;margin-bottom:6px;}
+.pillar h4 em{font-style:normal;color:var(--gold);font-size:12px;letter-spacing:.2em;display:block;margin-bottom:2px;}
+.pillar p{font-size:13px;color:#C2CEDF;line-height:1.8;}
+.pillar-key{grid-column:1/-1;background:linear-gradient(135deg,rgba(229,184,56,.16),rgba(229,184,56,.06));border:1px solid rgba(229,184,56,.55);}
+.pillar-key p{color:#E7EDF6;}
+.life-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+.life-card{background:var(--white);color:var(--ink);border-radius:6px;padding:22px;border-top:4px solid var(--gold);}
+.life-card h4{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.life-card p{font-size:13.5px;color:var(--gray);line-height:1.8;}
+
+/* ===== News ===== */
+.news{background:var(--white);}
+.news-list{border-top:1px solid var(--line);}
+.news-list li{border-bottom:1px solid var(--line);}
+.news-list a{display:grid;grid-template-columns:110px 96px 1fr;gap:18px;align-items:center;padding:20px 8px;transition:background .2s;}
+.news-list a:hover{background:var(--paper);}
+.news-date{font-size:13px;color:var(--gray);font-weight:500;letter-spacing:.05em;}
+.news-cat{font-size:11px;font-weight:700;text-align:center;padding:3px 0;border-radius:99px;letter-spacing:.1em;}
+.cat-activity{background:var(--gold-soft);color:#8A6A12;}
+.cat-notice{background:#E2ECF9;color:var(--blue);}
+.news-title{font-size:14.5px;font-weight:500;}
+.news-more{text-align:center;margin-top:32px;}
+
+/* ===== Book ===== */
+.book{background:linear-gradient(160deg,#F3F0E7,#EFEAD9);}
+.book-grid{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:center;}
+/* 書影プレースホルダー：書影画像に差し替えてください */
+.book-cover{aspect-ratio:5/7;background:linear-gradient(165deg,var(--navy),var(--navy-deep));border-radius:3px;box-shadow:12px 16px 32px rgba(11,42,85,.28);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:28px;text-align:center;}
+.book-cover .bc-title{writing-mode:vertical-rl;font-family:var(--serif);color:var(--white);font-size:24px;font-weight:800;letter-spacing:.2em;line-height:1.7;height:280px;}
+.book-cover .bc-sub{color:var(--gold);font-size:11px;letter-spacing:.25em;margin-top:16px;font-weight:700;}
+.book h3{font-family:var(--serif);font-size:clamp(22px,3vw,28px);color:var(--navy);letter-spacing:.06em;margin-bottom:6px;}
+.book .book-sub{font-size:14px;color:var(--gray);font-weight:700;letter-spacing:.1em;margin-bottom:20px;}
+.book p{font-size:15px;color:var(--ink);margin-bottom:16px;max-width:560px;}
+.book .btn{margin-top:8px;}
+
+/* ===== Support ===== */
+.support{background:var(--paper);}
+.support-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.support-card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:32px 28px;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s;}
+.support-card:hover{box-shadow:0 12px 28px rgba(11,42,85,.1);transform:translateY(-3px);}
+.support-card .sc-icon{width:48px;height:48px;border-radius:50%;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;}
+.support-card h4{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px;letter-spacing:.05em;}
+.support-card p{font-size:13.5px;color:var(--gray);flex:1;margin-bottom:20px;}
+.support-card .btn{text-align:center;}
+
+/* ===== Contact ===== */
+.contact{background:var(--white);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.office-box{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:32px;}
+.office-box h4{font-family:var(--serif);font-size:18px;color:var(--navy);letter-spacing:.1em;margin-bottom:16px;}
+.office-box dl{font-size:14px;}
+.office-box dt{font-weight:700;color:var(--blue);font-size:12px;letter-spacing:.15em;margin-top:14px;}
+.office-box dd{color:var(--ink);}
+.sns-row{display:flex;gap:12px;margin-top:20px;}
+.sns-row a{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;transition:background .2s,transform .15s;}
+.sns-row a:hover{background:var(--blue);transform:translateY(-2px);}
+
+/* ===== Footer ===== */
+.footer{background:var(--navy-deep);color:#AEBDD3;padding:56px 0 32px;}
+.footer-inner{max-width:1080px;margin:0 auto;padding:0 24px;}
+.footer-brand{font-family:var(--serif);font-size:20px;font-weight:800;color:var(--white);letter-spacing:.12em;margin-bottom:6px;}
+.footer-party{font-size:12px;letter-spacing:.1em;margin-bottom:28px;}
+.footer-nav{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:13px;margin-bottom:36px;}
+.footer-nav a:hover{color:var(--gold);}
+.footer-copy{font-size:11px;letter-spacing:.08em;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;}
+
+/* ===== Reveal animation ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.on{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+
+/* ===== Responsive ===== */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:left;padding:40px 24px 64px;}
+  .hero-copy-v{writing-mode:horizontal-tb;height:auto;font-size:clamp(32px,8.5vw,44px);line-height:1.5;letter-spacing:.1em;}
+  .hero-photo{width:min(70vw,320px);margin:0 auto;}
+  .hero-body{max-width:none;}
+  .message-grid,.profile-grid,.book-grid,.contact-grid{grid-template-columns:1fr;gap:36px;}
+  .book-cover{max-width:240px;margin:0 auto;}
+  .nav{position:fixed;top:68px;right:0;background:var(--white);flex-direction:column;align-items:stretch;width:min(78vw,320px);height:calc(100vh - 68px);padding:32px 28px;gap:8px;border-left:1px solid var(--line);transform:translateX(100%);transition:transform .3s;box-shadow:-12px 0 32px rgba(11,42,85,.08);}
+  .nav.open{transform:none;}
+  .nav a{padding:12px 4px;border-bottom:1px solid var(--line);}
+  .nav-cta{text-align:center;margin-top:12px;border-radius:3px;}
+  .menu-btn{display:block;}
+  .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .menu-btn.open span:nth-child(2){opacity:0;}
+  .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  section{padding:64px 0;}
+  .news-list a{grid-template-columns:92px 1fr;grid-template-rows:auto auto;gap:6px 14px;}
+  .news-cat{grid-row:1;grid-column:2;justify-self:start;padding:3px 14px;}
+  .news-title{grid-column:1/-1;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ ヘッダー ============ -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-name">みさわ宏明</span>
+      <span class="brand-party">国民民主党</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#message">理念</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#policy">政策</a>
+      <a href="#news">活動報告</a>
+      <a href="#book">著書</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="#support" class="nav-cta">応援する</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ ヒーロー ============ -->
+<div class="hero" id="top">
+  <div class="hero-inner">
+    <h1 class="hero-copy-v">次世代に<span class="accent">誇れる</span><br>日本へ。</h1>
+    <div class="hero-body">
+      <p class="hero-lead">まだ終わっていない、日本。<br>希望と再生のために。</p>
+      <p class="hero-text">国民民主党 東京都第28区（練馬区東部）総支部長。金融の最前線で世界と向き合った経験を、日本の自立と再生のために。</p>
+      <div class="hero-tags">
+        <span>東京28区・練馬</span>
+        <span>国家の自立</span>
+        <span>資本主権</span>
+        <span>手取りを増やす</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#policy" class="btn btn-primary">政策を見る</a>
+        <a href="#support" class="btn btn-gold">みさわを応援する</a>
+      </div>
+    </div>
+    <!-- ▼ 本人写真に差し替える場合：この div を <img src="photo.jpg" alt="みさわ宏明"> に置き換え -->
+    <div class="hero-photo">
+      <div class="hero-photo-name">みさわ宏明</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 理念・メッセージ ============ -->
+<section class="message" id="message">
+  <div class="container">
+    <div class="sec-label reveal"><span>MESSAGE</span></div>
+    <h2 class="sec-title reveal">「日本に生まれてよかった」と、<br>次の世代が言える国に。</h2>
+    <div class="message-grid">
+      <div>
+        <p class="message-quote reveal">私たちは、日本に誇りを持てた<br>最後の世代かもしれない。<br>――だからこそ、終わらせない。</p>
+        <p class="reveal">私が育った時代、日本は世界第二位の経済大国であり、アジアのリーダーでした。「日本に生まれてよかった」――そう自然に思える国で、私は育ちました。</p>
+        <p class="reveal">しかし今、子どもたちの世代は、同じ誇りを持てるでしょうか。実質賃金の停滞、円の価値の低下、地方の衰退、少子化。これらは別々の問題ではなく、同じ構造的な原因から生まれています。国の富が国民に還流せず、未来への投資が細っているのです。</p>
+        <p class="reveal">日本は、まだ終わっていません。金融の最前線で世界の資本と向き合ってきた経験から、私は確信しています。日本には再生の力があり、そのための処方箋がある。国家としての自立を取り戻し、働く人の手取りを増やし、次の世代が「日本に生まれてよかった」と言える国をつくる。そのために、私は政治の道を歩んでいます。</p>
+        <p class="message-sign reveal">みさわ 宏明<small>国民民主党 東京都第28区総支部長</small></p>
+      </div>
+      <!-- ▼ 活動写真などに差し替え -->
+      <div class="message-photo reveal">活動写真（差し替え）</div>
+    </div>
+  </div>
 </section>
+
+<!-- ============ プロフィール ============ -->
+<section class="profile" id="profile">
+  <div class="container">
+    <div class="sec-label reveal"><span>PROFILE</span></div>
+    <h2 class="sec-title reveal">プロフィール</h2>
+    <div class="profile-grid">
+      <div class="profile-card reveal">
+        <h3>みさわ 宏明</h3>
+        <p class="kana">MISAWA HIROAKI</p>
+        <dl>
+          <dt>所属</dt>
+          <dd>国民民主党 東京都第28区総支部長（練馬区東部）</dd>
+          <dt>専門分野</dt>
+          <dd>金融・資本市場、不動産、日本株、経済政策</dd>
+          <dt>著書</dt>
+          <dd>『まだ終わっていない日本――希望と再生のために』</dd>
+          <dt>信条</dt>
+          <dd>次世代に誇れる日本へ。国家の自立なくして、暮らしの再生なし。</dd>
+        </dl>
+      </div>
+      <ul class="timeline">
+        <li class="reveal">
+          <span class="t-era">キャリアの原点</span>
+          <div class="t-title">外資系金融機関で世界と向き合う</div>
+          <p>不動産・日本株を専門に、世界の資本市場の最前線で実務経験を積む。日本の富が海外に流出し、国民に還流しない構造を目の当たりにする。</p>
+        </li>
+        <li class="reveal">
+          <span class="t-era">経営の現場へ</span>
+          <div class="t-title">ベンチャー企業役員として経営に参画</div>
+          <p>成長企業の経営に携わり、挑戦する人を支える資本と制度の重要性を実感。「金融を国民のための力に変える」という問題意識を深める。</p>
+        </li>
+        <li class="reveal">
+          <span class="t-era">政治への挑戦</span>
+          <div class="t-title">国民民主党 東京28区から立候補</div>
+          <p>2026年2月、第51回衆議院議員総選挙に東京都第28区から挑戦。志半ばで敗れるも、約2万9千の負託を胸に、地域での活動を継続。</p>
+        </li>
+        <li class="reveal">
+          <span class="t-era">現在</span>
+          <div class="t-title">練馬から、日本の再生を</div>
+          <p>東京都第28区総支部長として、駅頭・タウンミーティング・経済セミナーなど地域に根ざした活動を展開。次の勝利へ、一歩ずつ。</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 政策 ============ -->
+<section class="policy" id="policy">
+  <div class="container">
+    <div class="sec-label reveal"><span>POLICY</span></div>
+    <h2 class="sec-title reveal">政策 ― 国家の背骨と、暮らしの実感。</h2>
+    <p class="policy-intro reveal">国の自立という「背骨」がなければ、暮らしの豊かさは守れません。同時に、日々の暮らしが良くならなければ、国の力も育ちません。みさわ宏明は、この両輪で日本の再生に取り組みます。</p>
+
+    <div class="policy-block">
+      <h3 class="policy-block-title reveal">Ⅰ．国家の背骨 ― 七つの国力</h3>
+      <p class="policy-block-sub reveal">国の力は七つの柱で支えられています。そして、その全ての土台にあるのが「資本の力」です。</p>
+      <div class="pillars">
+        <div class="pillar pillar-key reveal">
+          <h4><em>PILLAR 07 ― 全ての土台</em>資本力：資本主権の確立</h4>
+          <p>資本主権なき国家は、他の六つの国力をすべて失う――。家計の眠れる資産を日本の成長企業へ循環させる国民共有投資基金（NCIF）構想、金融機関の還元率向上、国富を国民に還流させる仕組みづくり。金融のプロとして、最も力を注ぐ政策です。</p>
+        </div>
+        <div class="pillar reveal"><h4><em>PILLAR 01</em>軍事力</h4><p>自らの国は自らで守る。抑止力の強化と、現実的な安全保障政策。</p></div>
+        <div class="pillar reveal"><h4><em>PILLAR 02</em>経済力</h4><p>成長と分配の好循環を取り戻し、世界に伍する経済基盤を再構築。</p></div>
+        <div class="pillar reveal"><h4><em>PILLAR 03</em>技術力</h4><p>半導体・AI・エネルギー。未来を左右する戦略技術への集中投資。</p></div>
+        <div class="pillar reveal"><h4><em>PILLAR 04</em>外交力</h4><p>主体的な外交で国益を守る。同盟と自立を両立させる戦略外交。</p></div>
+        <div class="pillar reveal"><h4><em>PILLAR 05</em>情報力</h4><p>情報戦の時代に対応する発信力・分析力・サイバー防衛の強化。</p></div>
+        <div class="pillar reveal"><h4><em>PILLAR 06</em>市民力</h4><p>教育と地域社会の再生。民主主義を支える市民の力を育てる。</p></div>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <h3 class="policy-block-title reveal">Ⅱ．暮らしの実感 ― 手取りと未来を増やす</h3>
+      <p class="policy-block-sub reveal">国民民主党の「手取りを増やす」政策を、練馬の暮らしの現場から実現します。</p>
+      <div class="life-cards">
+        <div class="life-card reveal"><h4>手取りを増やす税制</h4><p>基礎控除の引き上げ、ガソリン減税など、働く人の可処分所得を直接増やす税制改革を推進します。</p></div>
+        <div class="life-card reveal"><h4>現役世代の負担軽減</h4><p>社会保険料の負担構造を見直し、子育て・現役世代が将来に希望を持てる制度へ改革します。</p></div>
+        <div class="life-card reveal"><h4>教育・人への投資</h4><p>教育国債などを活用し、子どもたちの学びと挑戦への投資を拡充。人こそ最大の資源です。</p></div>
+        <div class="life-card reveal"><h4>東京一極集中の是正</h4><p>少子化と地方衰退は同じ構造問題。分散型国土への転換で、東京も地方も持続可能な国へ。</p></div>
+        <div class="life-card reveal"><h4>家計の資産形成支援</h4><p>貯蓄から投資への流れを国民本位で設計し、家計の資産が日本の成長と共に育つ仕組みをつくります。</p></div>
+        <div class="life-card reveal"><h4>練馬の暮らしを守る</h4><p>駅頭・タウンミーティングで伺った声を政策に。地域の交通・防災・子育て環境の充実に取り組みます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 活動報告・お知らせ ============ -->
+<section class="news" id="news">
+  <div class="container">
+    <div class="sec-label reveal"><span>NEWS</span></div>
+    <h2 class="sec-title reveal">活動報告・お知らせ</h2>
+    <!-- ▼ 更新はこのリストの <li> を追加・編集してください（日付・カテゴリ・タイトル・リンク先） -->
+    <ul class="news-list reveal">
+      <li><a href="#"><span class="news-date">2026.07.12</span><span class="news-cat cat-activity">活動報告</span><span class="news-title">【サンプル】練馬区内で経済セミナー「日本経済と資産形成」第3回を開催しました</span></a></li>
+      <li><a href="#"><span class="news-date">2026.07.05</span><span class="news-cat cat-activity">活動報告</span><span class="news-title">【サンプル】大泉学園駅にて朝の駅頭活動を行いました</span></a></li>
+      <li><a href="#"><span class="news-date">2026.06.28</span><span class="news-cat cat-notice">お知らせ</span><span class="news-title">【サンプル】タウンミーティング「練馬の未来を語る会」開催のご案内</span></a></li>
+      <li><a href="#"><span class="news-date">2026.06.15</span><span class="news-cat cat-notice">お知らせ</span><span class="news-title">【サンプル】後援会ニュースレター最新号を発行しました</span></a></li>
+      <li><a href="#"><span class="news-date">2026.06.01</span><span class="news-cat cat-activity">活動報告</span><span class="news-title">【サンプル】2027年統一地方選挙に向けた党練馬区組織の活動を開始しました</span></a></li>
+    </ul>
+    <div class="news-more reveal"><a href="#" class="btn btn-ghost">活動報告一覧を見る</a></div>
+  </div>
+</section>
+
+<!-- ============ 著書 ============ -->
+<section class="book" id="book">
+  <div class="container">
+    <div class="sec-label reveal"><span>BOOK</span></div>
+    <h2 class="sec-title reveal">著書</h2>
+    <div class="book-grid">
+      <!-- ▼ 書影画像に差し替える場合：この div を <img src="book.jpg" alt="書影"> に置き換え -->
+      <div class="book-cover reveal">
+        <div class="bc-title">まだ終わっていない日本</div>
+        <div class="bc-sub">希望と再生のために</div>
+      </div>
+      <div>
+        <h3 class="reveal">『まだ終わっていない日本』</h3>
+        <p class="book-sub reveal">――希望と再生のために</p>
+        <p class="reveal">なぜ日本は停滞したのか。そして、どうすれば再生できるのか。外資系金融機関で世界の資本市場と向き合い、ベンチャー経営の現場を経験した著者が、「七つの国力」という独自の視座から日本再生の道筋を描く。</p>
+        <p class="reveal">軍事・経済・技術・外交・情報・市民、そして全ての土台となる「資本」。資本主権を失った国家は、他の全ての国力を失う――。悲観論でも精神論でもない、実務家による具体的な処方箋。日本は、まだ終わっていない。</p>
+        <a href="#" class="btn btn-primary reveal">書籍の詳細を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 応援・後援会 ============ -->
+<section class="support" id="support">
+  <div class="container">
+    <div class="sec-label reveal"><span>SUPPORT</span></div>
+    <h2 class="sec-title reveal">みさわ宏明を応援する</h2>
+    <div class="support-cards">
+      <div class="support-card reveal">
+        <div class="sc-icon">🤝</div>
+        <h4>後援会に入る</h4>
+        <p>後援会「（後援会名を記載）」の会員として、みさわ宏明の活動を支えてください。ニュースレターやイベントのご案内をお届けします。</p>
+        <a href="#contact" class="btn btn-primary">入会のご案内</a>
+      </div>
+      <div class="support-card reveal">
+        <div class="sc-icon">📣</div>
+        <h4>ボランティアに参加する</h4>
+        <p>駅頭活動、ポスティング、イベント運営など、できる時に、できることから。あなたの力が地域を動かします。</p>
+        <a href="#contact" class="btn btn-primary">参加方法を見る</a>
+      </div>
+      <div class="support-card reveal">
+        <div class="sc-icon">💛</div>
+        <h4>党員・サポーターになる</h4>
+        <p>国民民主党の党員・サポーターとして、「対決より解決」の政治を一緒に前へ進めましょう。</p>
+        <a href="https://new-kokumin.jp/" class="btn btn-gold" target="_blank" rel="noopener">党公式サイトへ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ お問い合わせ・事務所 ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="sec-label reveal"><span>CONTACT</span></div>
+    <h2 class="sec-title reveal">お問い合わせ・事務所のご案内</h2>
+    <div class="contact-grid">
+      <div class="office-box reveal">
+        <h4>みさわ宏明 事務所</h4>
+        <dl>
+          <dt>所在地</dt>
+          <dd>〒（郵便番号） 東京都練馬区（住所を記載）</dd>
+          <dt>電話</dt>
+          <dd>03-XXXX-XXXX（受付時間を記載）</dd>
+          <dt>メール</dt>
+          <dd>info@example.com（メールアドレスを記載）</dd>
+        </dl>
+      </div>
+      <div class="reveal">
+        <p style="font-size:15px;margin-bottom:20px;">ご意見・ご感想、後援会・ボランティアへのお申し込み、講演・取材のご依頼など、お気軽にお問い合わせください。皆さまの声が、政策の出発点です。</p>
+        <a href="mailto:info@example.com" class="btn btn-primary">メールで問い合わせる</a>
+        <!-- ▼ SNSリンク：href を各アカウントURLに差し替えてください -->
+        <div class="sns-row">
+          <a href="#" aria-label="X（旧Twitter）">X</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="LINE">L</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ フッター ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">みさわ宏明</div>
+    <div class="footer-party">国民民主党 東京都第28区総支部長（練馬区東部）</div>
+    <nav class="footer-nav">
+      <a href="#message">理念</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#policy">政策</a>
+      <a href="#news">活動報告</a>
+      <a href="#book">著書</a>
+      <a href="#support">応援する</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="https://new-kokumin.jp/" target="_blank" rel="noopener">国民民主党公式サイト</a>
+    </nav>
+    <div class="footer-copy">© Misawa Hiroaki. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+// モバイルメニュー
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>{
+  const open=nav.classList.toggle('open');
+  menuBtn.classList.toggle('open',open);
+  menuBtn.setAttribute('aria-expanded',open?'true':'false');
+});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  nav.classList.remove('open');menuBtn.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded','false');
+}));
+// スクロールで要素をふわっと表示
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
