@@ -46,29 +46,35 @@ ul{list-style:none;}
 .menu-btn span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;transition:.3s;}
 
 /* ===== Hero ===== */
-.hero{position:relative;min-height:92vh;display:flex;align-items:center;background:linear-gradient(160deg,#F7F8FA 0%,#EDF1F7 55%,#E3EAF4 100%);overflow:hidden;padding-top:68px;}
-.hero::before{content:"";position:absolute;right:-10%;top:-20%;width:60%;height:140%;background:radial-gradient(closest-side,rgba(22,86,168,.10),transparent 70%);}
-.hero::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:6px;background:linear-gradient(90deg,var(--navy) 0%,var(--navy) 60%,var(--gold) 60%,var(--gold) 100%);}
-.hero-inner{position:relative;max-width:1080px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:auto 1fr auto;gap:48px;align-items:center;width:100%;}
-.hero-copy-v{writing-mode:vertical-rl;font-family:var(--serif);font-weight:800;font-size:clamp(40px,5.5vw,64px);letter-spacing:.22em;color:var(--navy);line-height:1.5;height:min(60vh,520px);}
-.hero-copy-v .accent{color:var(--gold);text-shadow:0 1px 0 rgba(11,42,85,.15);}
-.hero-body{max-width:420px;}
-.hero-lead{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);letter-spacing:.06em;margin-bottom:16px;}
-.hero-text{font-size:14.5px;color:var(--gray);margin-bottom:28px;}
+/* ===== Hero (写真ヒーロー版) ===== */
+.hero{position:relative;min-height:92vh;display:flex;align-items:stretch;background:var(--navy);overflow:hidden;padding-top:68px;}
+.hero::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:6px;background:linear-gradient(90deg,var(--navy) 0%,var(--navy) 60%,var(--gold) 60%,var(--gold) 100%);z-index:3;}
+.hero-inner{position:relative;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;width:100%;}
+.hero-copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:64px 48px 64px 24px;}
+.hero-eyebrow{font-size:13px;font-weight:700;letter-spacing:.3em;color:var(--gold);margin-bottom:18px;}
+.hero-title{font-family:var(--serif);font-weight:800;font-size:clamp(30px,4vw,46px);letter-spacing:.08em;color:var(--white);line-height:1.55;margin-bottom:22px;}
+.hero-title .accent{color:var(--gold);}
+.hero-lead{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--white);letter-spacing:.04em;margin-bottom:14px;opacity:.92;}
+.hero-text{font-size:14px;color:#C9D4E4;margin-bottom:26px;max-width:440px;}
 .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
 .hero-tags span{font-size:12px;font-weight:700;color:var(--navy);background:var(--white);border:1px solid var(--line);padding:5px 12px;border-radius:99px;letter-spacing:.05em;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
 .btn{display:inline-block;font-weight:700;font-size:14px;letter-spacing:.08em;padding:13px 28px;border-radius:3px;transition:transform .15s,filter .2s;}
 .btn:hover{transform:translateY(-2px);}
-.btn-primary{background:var(--navy);color:var(--white);}
-.btn-primary:hover{filter:brightness(1.15);}
+.btn-primary{background:var(--white);color:var(--navy);}
+.btn-primary:hover{filter:brightness(.95);}
 .btn-gold{background:var(--gold);color:var(--navy);}
 .btn-gold:hover{filter:brightness(1.05);}
 .btn-ghost{border:1.5px solid var(--navy);color:var(--navy);}
-/* 写真プレースホルダー：ここを本人写真 <img> に差し替えてください */
-.hero-photo{width:min(34vw,360px);aspect-ratio:3/4;background:linear-gradient(180deg,#C9D4E4,#9FB2CC);border-radius:4px;position:relative;box-shadow:0 24px 48px rgba(11,42,85,.18);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
-.hero-photo::before{content:"本人写真\A（差し替え）";white-space:pre;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:rgba(255,255,255,.85);font-size:13px;letter-spacing:.2em;font-weight:700;}
-.hero-photo-name{position:relative;background:rgba(11,42,85,.85);color:var(--white);width:100%;text-align:center;padding:10px 0;font-family:var(--serif);font-size:15px;letter-spacing:.3em;font-weight:700;}
+.hero-sns{display:flex;gap:12px;}
+.hero-sns a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;transition:background .2s,transform .15s;}
+.hero-sns a:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);transform:translateY(-2px);}
+ 
+.hero-photo-wrap{position:relative;overflow:hidden;}
+/* ▼ 本人写真：misawa-photo.jpg を配置してください */
+.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+.hero-photo-wrap::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(11,42,85,.55) 16%,rgba(11,42,85,0) 42%);z-index:1;}
+.hero-photo-wrap::after{content:"";position:absolute;left:0;right:0;bottom:0;height:35%;background:linear-gradient(180deg,rgba(11,42,85,0),rgba(11,42,85,.55));z-index:1;}
 
 /* ===== Section base ===== */
 section{padding:88px 0;}
@@ -242,24 +248,31 @@ section{padding:88px 0;}
 <!-- ============ ヒーロー ============ -->
 <div class="hero" id="top">
   <div class="hero-inner">
-    <h1 class="hero-copy-v">次世代に<span class="accent">誇れる</span><br>日本へ。</h1>
-    <div class="hero-body">
-      <p class="hero-lead">まだ終わっていない、日本。<br>希望と再生のために。</p>
-      <p class="hero-text">国民民主党 東京都第28区（練馬区東部）総支部長。金融の最前線で世界と向き合った経験を、日本の自立と再生のために。</p>
-      <div class="hero-tags">
+    <div class="hero-copy">
+      <p class="hero-eyebrow reveal">MISAWA HIROAKI</p>
+      <h1 class="hero-title reveal">次世代に<span class="accent">誇れる</span><br>日本へ。</h1>
+      <p class="hero-lead reveal">まだ終わっていない、日本。希望と再生のために。</p>
+      <p class="hero-text reveal">国民民主党 東京都第28区（練馬区東部）総支部長。金融の最前線で世界と向き合った経験を、日本の自立と再生のために。</p>
+      <div class="hero-tags reveal">
         <span>東京28区・練馬</span>
         <span>国家の自立</span>
         <span>資本主権</span>
         <span>手取りを増やす</span>
       </div>
-      <div class="hero-btns">
+      <div class="hero-btns reveal">
         <a href="#policy" class="btn btn-primary">政策を見る</a>
         <a href="#support" class="btn btn-gold">みさわを応援する</a>
       </div>
+      <div class="hero-sns reveal">
+        <a href="#" aria-label="X（旧Twitter）">X</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">Ig</a>
+        <a href="#" aria-label="YouTube">▶</a>
+        <a href="#" aria-label="LINE">L</a>
+      </div>
     </div>
-    <!-- ▼ 本人写真に差し替える場合：この div を <img src="photo.jpg" alt="みさわ宏明"> に置き換え -->
-    <div class="hero-photo">
-      <div class="hero-photo-name">みさわ宏明</div>
+    <div class="hero-photo-wrap">
+      <img src="misawa-photo.jpg" alt="みさわ宏明">
     </div>
   </div>
 </div>
