@@ -1,0 +1,136 @@
+:root{
+  --navy:#0b2a55;
+  --gold:#d4a017;
+  --white:#ffffff;
+  --line:#d9d9d9;
+}
+
+/* ===== レイアウト（顔に文字がかからない） ===== */
+.hero-fixed{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:90vh;
+  background:var(--navy);
+  color:var(--white);
+}
+
+.hero-content{
+  padding:60px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-photo{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top; /* ← 顔が見える位置に調整 */
+}
+
+/* ===== テキスト ===== */
+.hero-eyebrow{
+  font-size:14px;
+  letter-spacing:.3em;
+  color:var(--gold);
+  margin-bottom:12px;
+}
+
+.hero-title{
+  font-size:clamp(32px,5vw,52px);
+  font-weight:800;
+  line-height:1.4;
+  margin-bottom:16px;
+}
+
+.hero-title .accent{
+  color:var(--gold);
+}
+
+.hero-lead{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.hero-desc{
+  font-size:15px;
+  max-width:500px;
+  margin-bottom:24px;
+  opacity:0.9;
+}
+
+/* ===== タグ ===== */
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:28px;
+}
+
+.hero-tags span{
+  background:var(--white);
+  color:var(--navy);
+  padding:6px 12px;
+  border-radius:99px;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* ===== ボタン ===== */
+.hero-btns{
+  display:flex;
+  gap:16px;
+  margin-bottom:28px;
+}
+
+.btn{
+  padding:12px 28px;
+  font-weight:700;
+  border-radius:4px;
+}
+
+.btn-primary{
+  background:var(--white);
+  color:var(--navy);
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:var(--navy);
+}
+
+/* ===== SNS ===== */
+.hero-sns{
+  display:flex;
+  gap:12px;
+}
+
+.hero-sns a{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.3);
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* ===== スマホ対応 ===== */
+@media(max-width:900px){
+  .hero-fixed{
+    grid-template-columns:1fr;
+  }
+  .hero-photo{
+    height:60vh;
+  }
+}
